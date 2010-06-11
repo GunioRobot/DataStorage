@@ -36,8 +36,6 @@ Record = new Class({
 	},
 	save: function(callback){
 		this.model.adapter.save(this, callback);
-		
-		this.isModified = false;
 	},
 	destroy: function(callback){
 		this.model.adapter.destroy(this, callback);

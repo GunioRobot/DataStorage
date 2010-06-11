@@ -28,6 +28,7 @@ Adapter.localStorage = new Class({
 			record.data["_id"] = uuid();
 		}
 		localStorage[record.model.name + "::" + record.data["_id"]] = JSON.encode(record.data);
+		record.isModified = false;
 		callback();
 	},
 	destroy: function(record, callback){

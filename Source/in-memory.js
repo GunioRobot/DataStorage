@@ -29,6 +29,7 @@ Adapter.InMemory = new Class({
 			record.data["_id"] = uuid();
 		}
 		this.database[record.data["_id"]] = Object.clone(record.data);
+		record.isModified = false;
 		callback();
 	},
 	destroy: function(record, callback){
