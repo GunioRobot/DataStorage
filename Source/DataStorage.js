@@ -27,6 +27,7 @@ DataStorage = new Class({
 		this.adapter = new options.adapter(this);
 	},
 	create: function(data){
+		// The following can be implemented in a much more efficient way.
 		data = Object.merge(Object.clone(this.scheme), data);
 		data = Object.filter(data, function(x, key){
 			var v = (this.scheme[key] != undefined);
