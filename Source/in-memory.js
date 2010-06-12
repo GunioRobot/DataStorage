@@ -20,6 +20,7 @@ provides: [Adapter.InMemory]
 */
 
 Adapter.InMemory = new Class({
+	Extends: Adapter.Base,
 	initialize: function(model){
 		this.database = {};
 		if (!("_id" in model.scheme)){
@@ -28,7 +29,7 @@ Adapter.InMemory = new Class({
 	},
 	save: function(record, callback){
 		if (record.data["_id"] === "") {
-			record.data["_id"] = Adapter.helpers.uniqueID();
+			record.data["_id"] = this.uniqueID();
 		}
 		this.database[record.data["_id"]] = Object.clone(record.data);
 		record.isModified = false;

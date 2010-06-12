@@ -18,6 +18,7 @@ provides: [Adapter.localStorage]
 */
 
 Adapter.localStorage = new Class({
+	Extends: Adapter.Base,
 	initialize: function(model){
 		if (!("_id" in model.scheme)){
 			model.scheme["_id"] = "";
@@ -25,7 +26,7 @@ Adapter.localStorage = new Class({
 	},
 	save: function(record, callback){
 		if (record.data["_id"] === "") {
-			record.data["_id"] = Adapter.helpers.uniqueID();
+			record.data["_id"] = this.uniqueID();
 		}
 		localStorage[record.model.name + "::" + record.data["_id"]] = JSON.encode(record.data);
 		record.isModified = false;
