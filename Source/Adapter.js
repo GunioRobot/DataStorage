@@ -1,7 +1,7 @@
 /*
 ---
 
-script: adapter-base.js
+script: Adapter.js
 
 description: Helpers for the adapters
 
@@ -11,7 +11,7 @@ authors: Henrik Enggaard Hansen
 
 requires:
 
-provides: [Adapter, Adapter.helpers]
+provides: [Adapter, Adapter.Base]
 
 ...
 */
