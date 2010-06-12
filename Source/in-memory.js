@@ -11,6 +11,8 @@ authors: Henrik Enggaard Hansen
 
 requires:
 - DataStorage
+- Adapter
+- Adapter.helpers
 
 provides: [Adapter.InMemory]
 
@@ -26,7 +28,7 @@ Adapter.InMemory = new Class({
 	},
 	save: function(record, callback){
 		if (record.data["_id"] === "") {
-			record.data["_id"] = uuid();
+			record.data["_id"] = Adapter.helpers.uniqueID();
 		}
 		this.database[record.data["_id"]] = Object.clone(record.data);
 		record.isModified = false;

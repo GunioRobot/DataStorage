@@ -13,12 +13,10 @@ requires:
 - core:1.3
 - Record
 
-provides: [DataStorage, Adapter]
+provides: [DataStorage]
 
 ...
 */
-
-Adapter = {};
 
 DataStorage = new Class({
 	initialize: function(options){

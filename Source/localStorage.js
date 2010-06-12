@@ -25,7 +25,7 @@ Adapter.localStorage = new Class({
 	},
 	save: function(record, callback){
 		if (record.data["_id"] === "") {
-			record.data["_id"] = uuid();
+			record.data["_id"] = Adapter.helpers.uniqueID();
 		}
 		localStorage[record.model.name + "::" + record.data["_id"]] = JSON.encode(record.data);
 		record.isModified = false;
