@@ -20,7 +20,7 @@ provides: [Adapter.localStorage]
 Adapter.localStorage = new Class({
 	Extends: Adapter.PropertyBased,
 	initialize: function(model){
-		// We have to added the database here, instead of just adding it in the decleration of the class. MooTools likes to mess up localStorage :)
+		// We have to add the database here, instead of just adding it in the decleration of the class. MooTools likes to mess up localStorage :)
 		this.database = localStorage;
 		this.parent(model);
 	},

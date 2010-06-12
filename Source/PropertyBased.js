@@ -1,9 +1,9 @@
 /*
 ---
 
-script: Adapter.js
+script: PropertyBased.js
 
-description: A base class for simple property base databases.
+description: A base class for simple property based databases.
 
 license: MIT-style license.
 
@@ -11,7 +11,7 @@ authors: Henrik Enggaard Hansen
 
 requires:
 
-provides: [Adapter]
+provides: [Adapter.PropertyBased]
 
 ...
 */
