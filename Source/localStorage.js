@@ -32,10 +32,6 @@ Adapter.localStorage = new Class({
 		record.isModified = false;
 		callback();
 	},
-	destroy: function(record, callback){
-		delete this.database[record.model.name + "::" + record.data["_id"]]
-		callback();
-	},
 	filter: function(){
 		
 	},
