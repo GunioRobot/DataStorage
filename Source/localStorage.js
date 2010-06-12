@@ -18,17 +18,17 @@ provides: [Adapter.localStorage]
 */
 
 Adapter.localStorage = new Class({
-	Extends: Adapter.Base,
+	Extends: Adapter.PropertyBased,
 	initialize: function(model){
-		if (!("_id" in model.scheme)){
-			model.scheme["_id"] = "";
-		}
+		// We have to added the database here, instead of just adding it in the decleration of the class. MooTools likes to mess up localStorage :)
+		this.database = localStorage;
+		this.parent(model);
 	},
 	save: function(record, callback){
 		if (record.data["_id"] === "") {
 			record.data["_id"] = this.uniqueID();
 		}
-		localStorage[record.model.name + "::" + record.data["_id"]] = JSON.encode(record.data);
+		this.database[this.genKey(record.model.name, record.data["_id"])] = JSON.encode(record.data);
 		record.isModified = false;
 		callback();
 	},
