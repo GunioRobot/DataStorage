@@ -37,9 +37,9 @@ Adapter.localStorage = new Class({
 		callback();
 	},
 	filter: function(){
-		
+
 	},
 	find: function(){
-		
+
 	}
 });

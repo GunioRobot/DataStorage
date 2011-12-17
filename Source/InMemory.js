@@ -40,9 +40,9 @@ Adapter.InMemory = new Class({
 		callback();
 	},
 	filter: function(){
-		
+
 	},
 	find: function(){
-		
+
 	}
 });
